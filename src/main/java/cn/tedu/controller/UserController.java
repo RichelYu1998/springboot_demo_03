@@ -5,6 +5,7 @@ import cn.tedu.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -23,9 +24,19 @@ public class UserController {
      */
     @RequestMapping("/findAll")
     public String findAll(Model model){
-
         List<User> userList = userService.findAll();
         model.addAttribute("userList",userList);
         return "userList";
+    }
+    //1.跳转到ajax页面中
+    @RequestMapping("/userAjax")
+    public String userAjax() {
+        return "userAjax";
+    }
+    //2.接收ajax用户请求  返回值为userJSON数据
+    @RequestMapping("/findAjax")
+    @ResponseBody
+    public List<User> findAjax(){
+        return userService.findAll();
     }
 }
