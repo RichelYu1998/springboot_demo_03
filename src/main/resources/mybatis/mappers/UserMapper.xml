@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tedu.mapper.UserMapper">
+	
+	<select id="findAll" resultType="User">
+		select * from user
+	</select>
+<!--	关于驼峰规则说明
+		map-underscore-to-camel-case: true
+		表:
+		 字段: user_id,user_age,user_sex
+
+		对象:
+		 属性: userId,userAge,userSex
+
+		如果上述的配置,利用restType的方式进行映射时,则不能成功赋值
+
+		开启驼峰映射:
+				user_id ~~~~去除中间的"_"线 ~~~~~之后"首字母大写"userId(大小写)
+				之后将数据映射给对象的属性.
+-->
+</mapper>
