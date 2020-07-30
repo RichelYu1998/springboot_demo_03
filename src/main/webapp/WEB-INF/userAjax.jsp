@@ -4,7 +4,7 @@
 <html>
 <head>
     <!--导入函数类库  -->
-    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
     <!--JS测试  -->
     <script type="text/javascript">
         //让页面加载完成之后执行
