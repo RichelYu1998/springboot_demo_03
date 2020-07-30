@@ -30,16 +30,23 @@
                 $("#tb1").append(trs);
             });
             //2.利用$.ajax方法发起ajax请求
-            /*
         $.ajax({
                type: "POST",
-               url: "some.php",
-               data: "name=John&location=Boston",
-               success: function(msg){
-             alert( "Data Saved: " + msg );
+               url: "/findAjax",
+               cache:false,
+                async:false,
+                dataType:"json",
+               //data: "name=John&location=Boston",
+               success: function(data){
+                   $(data).each((index,user)=>{
+                      addrows(user);
+                   });
                }
             });
-            */
+        function addrows(user) {
+            let tr="<tr align='center'><td>"+user.id+"</td><td>"+user.name+"</td><td>"+user.age+"</td><td>"+user.sex+"</td></tr>"
+            $("#tb1").append(tr);
+        }
         });
     </script>
 
